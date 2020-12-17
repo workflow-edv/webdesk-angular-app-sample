@@ -1,0 +1,36 @@
+{
+    "terminal.integrated.shell.windows": "cmd.exe",
+    "terminal.integrated.shellArgs.windows": ["/K", "%CMDER_ROOT%\\vendor\\bin\\vscode_init.cmd"],
+
+    //React
+    "prettier.printWidth": 100,
+    "prettier.tabWidth": 4,
+    "prettier.trailingComma": "all",
+
+    "editor.rulers": [100, 120, 150],
+    "window.zoomLevel": 0,
+
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+
+    "diffEditor.ignoreTrimWhitespace": false,
+    "debug.node.autoAttach": "off",
+    "workbench.settings.editor": "json",
+
+    "explorer.confirmDragAndDrop": false,
+    "gitlens.gitCommands.closeOnFocusOut": true,
+    "editor.suggestSelection": "first",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "javascript.preferences.importModuleSpecifier": "non-relative",
+    "workbench.colorTheme": "Monokai Vibrant"
+}
