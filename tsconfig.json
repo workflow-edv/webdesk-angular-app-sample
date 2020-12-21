@@ -4,6 +4,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     // "strict": true,
     "noImplicitReturns": true,
@@ -14,11 +15,8 @@
     "experimentalDecorators": true,
     "importHelpers": true,
 
-    "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node",
-
-    "target": "es2015",
-    "module": "es2020",
+    "target": "es2020",
+    "module": "commonjs",
     "lib": ["es2015", "dom"]
   },
   "angularCompilerOptions": {

@@ -20,8 +20,7 @@
     "@angular/platform-browser-dynamic": "~11.0.5",
     "@angular/router": "~11.0.5",
     "@webdesk/webdesk-ta-websdk": "1.18.22",
-    "@webdesk/webdesk-tools-websdk": "1.17.10",
-    "moment": "^2.29.1",
+    "@webdesk/webdesk-tools-websdk": "1.17.11",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

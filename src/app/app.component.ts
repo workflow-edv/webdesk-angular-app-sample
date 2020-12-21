@@ -1,8 +1,5 @@
 import { Component } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
-// import { LoginService } from '@webdesk/webdesk-tools-websdk';
-import { Http, LoginService } from '@webdesk/webdesk-tools-websdk';
-import { BookingService } from "@webdesk/webdesk-ta-websdk";
 
 interface UserLogin {
   username: string;
@@ -27,15 +24,22 @@ export class AppComponent {
     });
   }
 
-  onSubmit(value: { [key: string]: any; }): void {
+  onSubmit(value: UserLogin): void {
     console.log(value);
     this.loginForm.patchValue(value);
+    this.login(value);
   }
 
   login(user: UserLogin): void {
+    const { moment, LoginService } = webdesksdk.tools;
     const baseURL = user.server;
+
+    const date = moment();
+    console.log(date);
+
     const login = new LoginService({ baseURL });
     login.doLogin(user.username, user.password);
-    const booking = new BookingService();
+
+    //  const booking = new BookingService();
   }
 }
