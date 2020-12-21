@@ -1,5 +1,8 @@
 <div class="content" role="main">
   <div class="card-container">
-    <span>Current state:</span>
+    <div class="card">
+      <span>Current state: {{ state }}</span>
+    </div>
+    <button class="card highlight-card" (click)="onClick()">Book</button>
   </div>
 </div>

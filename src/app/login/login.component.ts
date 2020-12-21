@@ -34,14 +34,15 @@ export class LoginComponent implements OnInit {
     this.loginForm.patchValue(value);
     try {
       await this.login(value);
-      this.router.navigate(["booking"]);
     } catch (error) {
-      alert(JSON.stringify(error, null, 4));
+      /// alert(JSON.stringify(error, null, 4));
+      console.error(error);
     }
+    this.router.navigate(["booking"]);
   }
 
   async login(user: UserLogin): Promise<void> {
-    const { LoginService } = window.webdesksdk.tools;
+    const { LoginService, Http } = window.webdesksdk.tools;
     const { BookingService } = window.webdesksdk.ta;
 
     const baseURL = user.server;
@@ -49,16 +50,13 @@ export class LoginComponent implements OnInit {
     const reqConfig = {
       baseURL, timeout: 20000, withCredentials: true,
     };
-    const http = Axios.create(reqConfig);
-
+    const http = new Http(reqConfig);
+    window.state.http = http;
     //
     const login = new LoginService({ baseURL });
     const booking = new BookingService({ http });
-    const session = await login.doLogin(user.username, user.password);
-    // await login.logout();
-    console.log(session);
-    await booking.getCurrentState();
+    await login.doLogin(user.username, user.password);
 
-    await http.get("rest/ta/bookings/state", reqConfig);
+    window.state.booking = await booking.getCurrentState();
   }
 }
