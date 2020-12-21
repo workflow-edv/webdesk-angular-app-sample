@@ -5,7 +5,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BookingComponent } from "./booking/booking.component";
 import { ReactiveFormsModule } from "@angular/forms";
-
+import { LoginComponent } from "./login/login.component";
 
 import("node_modules/@webdesk/webdesk-tools-websdk/dist/webdesk-tools-websdk.js");
 import("node_modules/@webdesk/webdesk-ta-websdk/dist/webdesk-ta-websdk.js");
@@ -13,7 +13,8 @@ import("node_modules/@webdesk/webdesk-ta-websdk/dist/webdesk-ta-websdk.js");
 @NgModule({
   declarations: [
     AppComponent,
-    BookingComponent
+    BookingComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

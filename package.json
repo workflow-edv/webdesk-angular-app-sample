@@ -21,6 +21,7 @@
     "@angular/router": "~11.0.5",
     "@webdesk/webdesk-ta-websdk": "1.18.22",
     "@webdesk/webdesk-tools-websdk": "1.17.11",
+    "axios": "^0.21.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

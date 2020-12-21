@@ -1,1 +1,6 @@
-declare const webdesksdk: { tools: any; ta: any }
+export { };
+declare global {
+    interface Window {
+        webdesksdk: { tools: any; ta: any },
+    }
+}
