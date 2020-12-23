@@ -18,19 +18,14 @@
   border-radius: 4px;
   border: 1px solid #eee;
   background-color: #fafafa;
-  height: 40px;
-  width: 200px;
-  margin: 0 8px 16px;
   padding: 16px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: all 0.2s ease-in-out;
   line-height: 24px;
 }
-
-
 
 .card.highlight-card {
   background-color: #1976d2;
@@ -41,6 +36,7 @@
   width: auto;
   min-width: 30%;
   position: relative;
+  margin: 5px;
 }
 
 .card.card.highlight-card span {
@@ -48,7 +44,7 @@
 }
 
 button.card.highlight-card {
-  padding: 15px;
+  padding: 10px;
 }
 
 a,

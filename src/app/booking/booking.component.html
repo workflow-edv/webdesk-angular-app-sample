@@ -1,8 +1,16 @@
 <div class="content" role="main">
+  <a (click)="back()">Back</a>
   <div class="card-container">
     <div class="card">
       <span>Current state: {{ state }}</span>
+      <span><b>Worktimes </b></span>
+      <span>Date: {{ worktimes.date }}</span>
+      <span>Left hours: {{ worktimes.leftHours }}</span>
+      <span>Target hours: {{ worktimes.targetHours }}</span>
+      <span>Worked hours: {{ worktimes.workedHours }}</span>
     </div>
+  </div>
+  <div class="card-container">
     <button class="card highlight-card" (click)="onClick()">Book</button>
   </div>
 </div>

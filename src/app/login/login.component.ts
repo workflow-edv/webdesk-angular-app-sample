@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { Router } from "@angular/router";
-import Axios from "axios";
 
 interface UserLogin {
   username: string;
@@ -32,31 +31,23 @@ export class LoginComponent implements OnInit {
 
   async onSubmit(value: UserLogin): Promise<void> {
     this.loginForm.patchValue(value);
-    try {
-      await this.login(value);
-    } catch (error) {
-      /// alert(JSON.stringify(error, null, 4));
-      console.error(error);
-    }
+    await this.login(value);
     this.router.navigate(["booking"]);
   }
 
   async login(user: UserLogin): Promise<void> {
     const { LoginService, Http } = window.webdesksdk.tools;
-    const { BookingService } = window.webdesksdk.ta;
 
     const baseURL = user.server;
 
     const reqConfig = {
-      baseURL, timeout: 20000, withCredentials: true,
+      baseURL, timeout: 20000
     };
     const http = new Http(reqConfig);
     window.state.http = http;
     //
     const login = new LoginService({ baseURL });
-    const booking = new BookingService({ http });
     await login.doLogin(user.username, user.password);
 
-    window.state.booking = await booking.getCurrentState();
   }
 }
