@@ -6,7 +6,9 @@ import { AppComponent } from "./app.component";
 import { BookingComponent } from "./booking/booking.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { LoginComponent } from "./login/login.component";
+
 window.state = window.state || { http: null, booking: null };
+
 @NgModule({
   declarations: [
     AppComponent,
