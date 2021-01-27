@@ -18,8 +18,12 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig": {
+              "path": "./webpack.config.ts",
+              "replaceDuplicatePlugins": true
+            },
             "outputPath": "dist/webdesk-angular-sdkApp",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -27,11 +31,7 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
-            "scripts": [
-              "node_modules/@webdesk/webdesk-tools-websdk/dist/webdesk-tools-websdk.js",
-              "node_modules/@webdesk/webdesk-ta-websdk/dist/webdesk-ta-websdk.js"
-            ]
+            "styles": ["src/styles.scss"]
           },
           "configurations": {
             "production": {
@@ -64,14 +64,9 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "browserTarget": "webdesk-angular-sdkApp:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "webdesk-angular-sdkApp:build:production"
-            }
           }
         },
         "extract-i18n": {

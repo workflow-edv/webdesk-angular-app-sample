@@ -1,3 +1,5 @@
+import { Http, LoginService } from "@webdesk/webdesk-tools-websdk";
+
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { Router } from "@angular/router";
@@ -36,16 +38,15 @@ export class LoginComponent implements OnInit {
   }
 
   async login(user: UserLogin): Promise<void> {
-    const { LoginService, Http } = window.webdesksdk.tools;
-
     const baseURL = user.server;
 
     const reqConfig = {
       baseURL, timeout: 20000
     };
+
     const http = new Http(reqConfig);
     window.state.http = http;
-    //
+
     const login = new LoginService({ baseURL });
     await login.doLogin(user.username, user.password);
 

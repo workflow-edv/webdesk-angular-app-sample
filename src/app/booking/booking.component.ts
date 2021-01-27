@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-
+import { BookingService } from "@webdesk/webdesk-ta-websdk";
 
 interface Worktimes {
-  date: string;
+  date: Date;
   leftHours: number;
   targetHours: number;
   workedHours: number;
@@ -16,8 +16,8 @@ interface Worktimes {
 
 export class BookingComponent implements OnInit {
   state = "none";
-  worktimes = {
-    date: new Date().toISOString(),
+  worktimes: Partial<Worktimes> = {
+    date: new Date(),
     leftHours: 0,
     targetHours: 0,
     workedHours: 0
@@ -25,7 +25,6 @@ export class BookingComponent implements OnInit {
   constructor(public route: ActivatedRoute, public router: Router) { }
 
   async ngOnInit(): Promise<void> {
-    const { BookingService } = window.webdesksdk.ta;
 
     if (!window.state.http?.baseURL) { return; }
 
@@ -38,7 +37,6 @@ export class BookingComponent implements OnInit {
   }
 
   async onClick(): Promise<void> {
-    const { BookingService } = window.webdesksdk.ta;
 
     const booking = new BookingService({ http: window.state.http });
 
