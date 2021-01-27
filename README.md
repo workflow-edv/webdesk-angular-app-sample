@@ -1,8 +1,8 @@
 # Webdesk Websdk Angular App
 
 This project is an Angular implementation for use of Webdesk's Websdks.
-The user can login to an specific Webdesk's instance using webdesk-tools-websdk and then switch his booking status from Attendant/Absent with webdesk-ta-websdk.
-These cases represent a basic implementation of Webdesk's websdks on an third'party application.
+
+The user can login to an specific Webdesk's instance using `webdesk-tools-websdk` and then switch his booking status from Attendant/Absent with `webdesk-ta-websdk`. These cases represent a basic implementation of Webdesk's websdks on an third party application.
 
 ## How to run the app
 
@@ -28,7 +28,7 @@ Also tested on Node version 14.4
 
 ### Login
 
-The login view is the default landing page of the app, it provides a formular for Webdesk Server, Username and Password. It uses BookingService from webdesk-tools-websdk to create a session on the browser.
+The login view is the default landing page of the app, it provides a formular for Webdesk Server, Username and Password. It uses BookingService from `webdesk-tools-websdk` to create a session on the browser.
 
 ### Booking
 
@@ -42,6 +42,6 @@ The web version provides a `webdesksdk` global variable which the application ca
 
 The Node version provides ES6+ ESM modules with types support, exported as webdesk-[module]-websdk.umd.js format.
 
-The current project uses both webdesk-tools-websdk and webdesk-ta-websdk, and uses the UMD/Node version for type suppport.
+The current project uses both `webdesk-tools-websdk` and `webdesk-ta-websdk`, and uses the UMD/Node version for type suppport.
 
 
