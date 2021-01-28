@@ -49,7 +49,7 @@ The current project uses both `webdesk-tools-websdk` and `webdesk-ta-websdk`, an
 In Webdesk it is necessary to configure specific `Access Rights` (under System -> Security -> Accessright Sets) to make the Webdesk instance allow any external application request specific endpoints.
 
 
-As we are using TA features, it is needed to grant FULL privileges on `/rest/ta` endpoint selector.
+As we are using TA features, it is needed to grant FULL privileges on `/rest/ta/*` endpoint selector.
 
 #### CORS Configuration 
 As of lately, it was noted on recent browser versions (Chrome based browsers tested so far) there is a problem with request headers with `SameSite` headers. 
