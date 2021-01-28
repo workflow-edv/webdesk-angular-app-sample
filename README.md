@@ -44,4 +44,14 @@ The Node version provides ES6+ ESM modules with types support, exported as webde
 
 The current project uses both `webdesk-tools-websdk` and `webdesk-ta-websdk`, and uses the UMD/Node version for type suppport.
 
+### Server Permissions 
 
+In Webdesk it is necessary to configure specific `Access Rights` (under System -> Security -> Accessright Sets) to make the Webdesk instance allow any external application request specific endpoints.
+
+
+As we are using TA features, it is needed to grant FULL privileges on `/rest/ta` endpoint selector.
+
+#### CORS Configuration 
+As of lately, it was noted on recent browser versions (Chrome based browsers tested so far) there is a problem with request headers with `SameSite` headers. 
+
+So it is needed to add `Set-Cookie: SameSite=None; Secure` in your server configuration to avoid header problems. Otherwise all endpoints will return 401 error.
