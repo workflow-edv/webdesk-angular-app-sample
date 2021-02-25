@@ -35,7 +35,24 @@
           formControlName="password"
         />
       </div>
-      <button type="submit" class="card highlight-card">Submit</button>
+      <button type="submit" class="card highlight-card">Login</button>
+    </form>
+    <form
+      class="card"
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit(loginForm.value)"
+    >
+      <div class="form-group">
+        <label for="inputEmail1">Server: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="serverInput1"
+          placeholder="Enter server instance"
+          formControlName="server"
+        />
+      </div>
+      <button type="submit" class="card highlight-card">NTLM Login</button>
     </form>
   </div>
 </div>
