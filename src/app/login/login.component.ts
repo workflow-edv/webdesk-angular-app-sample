@@ -34,6 +34,12 @@ export class LoginComponent implements OnInit {
 
   async onSubmit(value: UserLogin): Promise<void> {
     this.loginForm.patchValue(value);
+    await this.login(value);
+    this.router.navigate(["booking"]);
+  }
+
+  async onNTLMSubmit(value: UserLogin): Promise<void> {
+    this.loginForm.patchValue(value);
     await this.NTLMLogin(value);
     this.router.navigate(["booking"]);
   }
