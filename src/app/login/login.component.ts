@@ -3,7 +3,6 @@ import { Http, LoginService } from "@webdesk/webdesk-tools-websdk";
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { Router } from "@angular/router";
-import { IHttpConfig } from "@webdesk/webdesk-tools-websdk/dist/tools/http/http";
 
 interface UserLogin {
   username: string;
@@ -47,7 +46,7 @@ export class LoginComponent implements OnInit {
   async login(user: UserLogin): Promise<void> {
     const baseURL = user.server;
 
-    const reqConfig: IHttpConfig = {
+    const reqConfig = {
       baseURL,
       requestConfig: {
         withCredentials: true
@@ -66,7 +65,7 @@ export class LoginComponent implements OnInit {
   async NTLMLogin(user: UserLogin): Promise<void> {
     const baseURL = user.server;
 
-    const reqConfig: IHttpConfig = {
+    const reqConfig = {
       baseURL,
       requestConfig: {
         withCredentials: true
